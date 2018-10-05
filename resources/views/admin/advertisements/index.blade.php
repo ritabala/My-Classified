@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-sm-2">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#" class="fa fa-home"></a></li>
+                            <li class="breadcrumb-item"><a href="{{route('admins.index')}}" class="fa fa-home"></a></li>
                             <li class="breadcrumb-item active">Advertisement</li>
                         </ol>
                     </div>
