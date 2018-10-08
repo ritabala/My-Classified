@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card card-outline">
-                            <div class="card-body">
+                            {{--<div class="card-body">--}}
                                 {{--<h3 class="card-header">Create a new Advertisement</h3>--}}
                                 <div class="card-header bg-dark">
                                     <h3>Create a new Advertisement</h3>
@@ -97,7 +97,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            {{--</div>--}}
                         </div><!-- /.card -->
                     </div>
                 </div>
