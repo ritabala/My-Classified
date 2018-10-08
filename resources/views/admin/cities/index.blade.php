@@ -9,14 +9,14 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-8">
-                        <h1>Cities</h1>
+                        <h1 class="fa fa-map-marker">&nbsp Cities</h1>
                         @if ($message=Session::get('success'))
                             <div class="align-content-left alert-success" >{{$message}}</div>
                         @endif
                     </div>
                     <div class="col-sm-2">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#" class="fa fa-home"></a></li>
+                            <li class="breadcrumb-item"><a href="#" class="fa fa-home text-black-50"></a></li>
                             <li class="breadcrumb-item active">City</li>
                         </ol>
                     </div>

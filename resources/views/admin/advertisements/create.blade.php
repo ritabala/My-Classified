@@ -27,7 +27,7 @@
                             {{--<div class="card-body">--}}
                                 {{--<h3 class="card-header">Create a new Advertisement</h3>--}}
                                 <div class="card-header bg-dark">
-                                    <h3>Create a new Advertisement</h3>
+                                    <h5>Create a new Advertisement</h5>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">

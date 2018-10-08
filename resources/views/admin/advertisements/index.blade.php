@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-8">
-                        <h1>Advertisements</h1>
+                        <h1 class="m-0 text-black fa fa-buysellads">&nbsp; Advertisements</h1>
                         @if ($message=Session::get('error'))
                             {{--<div class="alert alert-danger align-content-center">--}}
                             <div class="align-content-left alert-danger" >{{$message}}</div>
@@ -21,11 +21,12 @@
                     </div>
                     <div class="col-sm-2">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('admins.index')}}" class="fa fa-home"></a></li>
+                            <li class="breadcrumb-item"><a href="{{route('admins.index')}}" class="fa fa-home text-black-50"></a></li>
                             <li class="breadcrumb-item active">Advertisement</li>
                         </ol>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm
+ ">
                         <ol class="breadcrumb float-sm-right">
                             <li><a href="{{route('advertisements.create')}}" class="fa fa-plus-circle btn btn-dark btn-sm"> Create New</a></li>
                         </ol>
