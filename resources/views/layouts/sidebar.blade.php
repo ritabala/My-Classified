@@ -27,7 +27,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item ">
-                    <a href="{{route('admins.index')}}" class="nav-link active">
+                    <a href="{{route('admins.index')}}" class="nav-link @if($currentPage == 'dashboard') active @endif">
                         <i class="nav-icon fa fa-dashboard"></i>
                         <p>
                             Dashboard
@@ -36,15 +36,16 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{route('advertisements.index')}}" class="nav-link">
+                    <a href="{{route('advertisements.index')}}" class="nav-link @if($currentPage == 'advertisement') active @endif">
                         <i class="nav-icon fa fa-buysellads"></i>
                         <p>
                             Advertisements
                             {{--<span class="right badge badge-danger"></span>--}}
                         </p>
                     </a>
-                </li> <li class="nav-item">
-                    <a href="{{route('categories.index')}}" class="nav-link">
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('categories.index')}}" class="nav-link @if($currentPage =='categories') active @endif">
                         <i class="nav-icon fa fa-th"></i>
                         <p>
                             Categories
@@ -53,7 +54,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('subcategories.index')}}" class="nav-link">
+                    <a href="{{route('subcategories.index')}}" class="nav-link @if($currentPage== 'subcategories') active @endif">
                         <i class="nav-icon fa fa-th"></i>
                         <p>
                             Sub-Categories
@@ -62,7 +63,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('countries.index')}}" class="nav-link">
+                    <a href="{{route('countries.index')}}" class="nav-link @if($currentPage== 'countries') active @endif">
                         <i class="nav-icon fa fa-map-marker"></i>
                         <p>
                             Countries
@@ -70,7 +71,7 @@
                         </p>
                     </a>
                 </li><li class="nav-item">
-                    <a href="{{route('cities.index')}}" class="nav-link">
+                    <a href="{{route('cities.index')}}" class="nav-link @if($currentPage== 'cities') active @endif">
                         <i class="nav-icon fa fa-map-marker"></i>
                         <p>
                             Cities
@@ -79,7 +80,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link @if($currentPage== 'orders') active  @endif">
                         <i class="nav-icon fa fa-shopping-cart"></i>
                         <p>
                             Orders

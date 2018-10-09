@@ -7,6 +7,11 @@ use App\Country;
 
 class CountryController extends Controller
 {
+    public function __construct()
+    {
+        view()->share('currentPage','countries');
+    }
+
     /**
      * Display a listing of the resource.
      *

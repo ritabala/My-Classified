@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class AdvertisementController extends Controller
 {
+
+    public function __construct()
+    {
+        view()->share('currentPage', 'advertisement');
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -3756,8 +3756,10 @@ input[type="button"].btn-block {
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  color: #ffffff;
-  background-color: #007bff;
+  color: #f8f9fa;
+  background-color: #444444;
+  /*color: #ffffff;*/
+  /*background-color: #007bff;*/
 }
 
 .nav-fill .nav-item {
@@ -11598,7 +11600,8 @@ label:not(.form-check-label):not(.custom-file-label) {
 }
 
 .nav-pills .nav-link:not(.active):hover {
-  color: #007bff;
+  color: #0c0c0c;
+  background-color: #99a4ac;
 }
 
 /*

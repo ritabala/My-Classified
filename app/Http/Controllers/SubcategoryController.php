@@ -8,6 +8,11 @@ use App\Category;
 
 class SubcategoryController extends Controller
 {
+    public function __construct()
+    {
+        view()->share('currentPage','subcategories');
+    }
+
     /**
      * Display a listing of the resource.
      *

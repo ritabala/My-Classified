@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\User;
 class AdminDashboardController extends Controller
 {
+
+    public function __construct()
+    {
+        view()->share('currentPage','dashboard');
+    }
+
     /**
      * Display a listing of the resource.
      *

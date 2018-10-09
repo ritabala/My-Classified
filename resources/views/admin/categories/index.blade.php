@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-8">
-                        <h1 class="m-0 text-black fa fa-th">&nbsp; Categories</h1>
+                        <h1 class="m-0 text-black"><i class="fa fa-th"></i>&nbsp; Categories</h1>
                         @if ($message=Session::get('error'))
                             {{--<div class="alert alert-danger align-content-center">--}}
                                 <div class="align-content-left alert-danger" >{{$message}}</div>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-sm-2">
                         <ol class="breadcrumb float-sm-right">
-                           <li><a href="{{route('categories.create')}}" class="fa fa-plus-circle btn btn-dark btn-sm"> Create New</a></li>
+                           <li><a href="{{route('categories.create')}}" class="btn btn-dark btn-sm"><i class="fa fa-plus-circle "></i> Create New</a></li>
                         </ol>
                     </div>
                 </div>
