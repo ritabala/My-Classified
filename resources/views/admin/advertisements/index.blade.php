@@ -56,25 +56,25 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($adv as $row)
-                                    <tr>
-                                        <td>{{$row->id}}</td>
-                                        <td>{{$row->title}}</td>
-                                        <td>{{$row->desc}}</td>
-                                        <td>{{$row->City->name}}</td>
-                                        <td>{{$row->price}}</td>
-                                        <td>{{$row->subcategory->category->cat_name}}</td>
-                                        <td>{{$row->subcategory->sub_category_name}}</td>
-                                        <td>{{$row->user->name}}</td>
-                                        <td>
-                                            <div>
-                                                <a href="{{route('images.edit',$row->id)}}" class="btn btn-dark fa fa-file-image-o"></a>
-                                                <a href="{{route('advertisements.edit',$row->id)}}" class="btn btn-primary fa fa-pencil"></a>
-                                                <button type="button" class=" delete btn btn-danger fa fa-trash-o" data-url="{{route('advertisements.destroy',$row->id )}}"  data-token="{{ csrf_token()}}" data-val="{{ $row->title }}" ></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                {{--@foreach($adv as $row)--}}
+                                    {{--<tr>--}}
+                                        {{--<td>{{$row->id}}</td>--}}
+                                        {{--<td>{{$row->title}}</td>--}}
+                                        {{--<td>{{$row->desc}}</td>--}}
+                                        {{--<td>{{$row->City->name}}</td>--}}
+                                        {{--<td>{{$row->price}}</td>--}}
+                                        {{--<td>{{$row->subcategory->category->cat_name}}</td>--}}
+                                        {{--<td>{{$row->subcategory->sub_category_name}}</td>--}}
+                                        {{--<td>{{$row->user->name}}</td>--}}
+                                        {{--<td>--}}
+                                            {{--<div>--}}
+                                                {{--<a href="{{route('images.edit',$row->id)}}" class="btn btn-dark fa fa-file-image-o"></a>--}}
+                                                {{--<a href="{{route('advertisements.edit',$row->id)}}" class="btn btn-primary fa fa-pencil"></a>--}}
+                                                {{--<button type="button" class=" delete btn btn-danger fa fa-trash-o" data-url="{{route('advertisements.destroy',$row->id )}}"  data-token="{{ csrf_token()}}" data-val="{{ $row->title }}" ></button>--}}
+                                            {{--</div>--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                {{--@endforeach--}}
                                 </tbody>
                             </table>
                         </div>
@@ -92,3 +92,47 @@
 
 
 @endsection
+
+@push('footer-js')
+    <script>
+        $(document).ready(function() {
+            $('#example1').DataTable({
+                processing: true,
+                serverSide: true,
+                autoWidth: false,
+                responsive: true,
+
+
+                ajax:
+                    {
+                     url:"   {{ route('advertisements.index') }}"
+                     // method:"Post"
+                    },
+
+                columns: [
+                    // {data: 'id'},
+                    // {data: 'title'},
+                    // {data: 'desc'},
+                    // {data: 'city_id'},
+                    // {data: 'price'},
+                    // {data: 'user_id'},
+                    // {data: 'subcategory_id'},
+                    // {data: 'category_id'},
+                    // {data: 'action'},
+
+
+                    {data: 'id', name: 'id'},
+                    {data: 'title', name: 'title'},
+                    {data: 'desc', name: 'desc'},
+                    {data: 'city_id', name: 'city_id'},
+                    {data: 'price', name: 'price'},
+                    {data: 'user_id', name: 'user_id'}
+                    // {data: 'subcategory_id', name: 'subcategory_id'},
+                    // {data: 'action', name: 'action'},
+                    // {data: 'category', name: 'category'}
+
+                        ]
+            });
+        });
+    </script>
+@endpush

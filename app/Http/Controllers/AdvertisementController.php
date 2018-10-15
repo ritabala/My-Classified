@@ -7,25 +7,46 @@ use App\Category;
 use App\SubCategory;
 use App\User;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class AdvertisementController extends Controller
 {
 
     public function __construct()
     {
-        view()->share('currentPage', 'advertisement');
+        view()->share('currentPage', 'advertisements');
     }
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     **/
+
     public function index()
     {
         $adv=Advertisement::get();
+//
+        if(\request()->ajax()){
+            return DataTables::of($adv)
+                ->addColumn('action', function($row){
+                    return "action";
+                })
+                ->addcolumn('category', function($row){
+                    return $row->subcategory->category->cat_name;
+                })
+                ->editColumn('city_id', function($row){
+                    return $row->city->name;
+                })
 
-        //dd($adv);
+                ->editColumn('subcategory_id', function($row){
+                    return $row->subcategory->sub_category_name;
+                })
+                ->editColumn('user_id', function($row){
+                    return $row->user->name;
+                })
+            ->make(true);
+        }
         return view('admin.advertisements.index',compact('adv'));
     }
 

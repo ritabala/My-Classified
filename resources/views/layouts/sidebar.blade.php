@@ -36,7 +36,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{route('advertisements.index')}}" class="nav-link @if($currentPage == 'advertisement') active @endif">
+                    <a href="{{route('advertisements.index')}}" class="nav-link @if($currentPage == 'advertisements') active @endif">
                         <i class="nav-icon fa fa-buysellads"></i>
                         <p>
                             Advertisements
@@ -80,7 +80,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link @if($currentPage== 'orders') active  @endif">
+                    <a href="{{route('orders.index')}}" class="nav-link @if($currentPage== 'orders') active  @endif">
                         <i class="nav-icon fa fa-shopping-cart"></i>
                         <p>
                             Orders

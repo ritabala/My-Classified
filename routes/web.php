@@ -26,3 +26,4 @@ Route::resource('countries', 'CountryController');
 Route::resource('cities', 'CityController');
 Route::resource('advertisements', 'AdvertisementController');
 Route::resource('images', 'ImageController');
+Route::resource('orders', 'OrderController');
