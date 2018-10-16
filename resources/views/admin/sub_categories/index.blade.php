@@ -45,20 +45,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($subcategory as $subcat)
-                                    <tr>
-                                        <td>{{$subcat->id}}</td>
-                                        <td>{{$subcat->sub_category_name}}</td>
-                                        <td>{{$subcat->category->category_name}}</td>
+                                {{--@foreach($subcategory as $subcat)--}}
+                                    {{--<tr>--}}
+                                        {{--<td>{{$subcat->id}}</td>--}}
+                                        {{--<td>{{$subcat->sub_category_name}}</td>--}}
+                                        {{--<td>{{$subcat->category->category_name}}</td>--}}
 
-                                        <td>
-                                            <div>
-                                                <a href="{{route('subcategories.edit',$subcat->id)}}" class="btn btn-primary fa fa-pencil"></a>
-                                                <button type="button" class=" delete btn btn-danger fa fa-trash-o" data-url="{{route('subcategories.destroy',$subcat->id )}}"  data-token="{{ csrf_token()}}" data-val="{{ $subcat->subcat_name }}" ></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                        {{--<td>--}}
+                                            {{--<div>--}}
+                                                {{--<a href="{{route('subcategories.edit',$subcat->id)}}" class="btn btn-primary fa fa-pencil"></a>--}}
+                                                {{--<button type="button" class=" delete btn btn-danger fa fa-trash-o" data-url="{{route('subcategories.destroy',$subcat->id )}}"  data-token="{{ csrf_token()}}" data-val="{{ $subcat->subcat_name }}" ></button>--}}
+                                            {{--</div>--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                {{--@endforeach--}}
                                 </tbody>
                             </table>
                         </div>
@@ -75,3 +75,28 @@
 
 
 @endsection
+
+@push('footer-js')
+    <script>
+        $(document).ready(function () {
+            $('#example1').DataTable(
+                {
+                    serverSide:true,
+                    processing:true,
+                    responsive:true,
+                    autoWidth:false,
+
+                    ajax:
+                        {
+                            url:"{{route('subcategories.index')}}"
+                        },
+                    columns:[
+                        {data:'id',name:'id'},
+                        {data:'sub_category_name',name:'sub_category_name'},
+                        {data:'category_id',name:'category_id'},
+                        {data:'action',name:'action'},
+                    ],
+                });
+        });
+    </script>
+@endpush

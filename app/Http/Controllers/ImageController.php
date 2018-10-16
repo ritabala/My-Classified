@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
+    public function __construct()
+    {
+        view()->share('currentPage', 'images');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -90,6 +94,7 @@ class ImageController extends Controller
         //
         $adv=Advertisement::find($id);
 //        dd($adv->title);
+//        dd($adv->id);
         return view('admin.images.index',compact('adv'));
 
     }

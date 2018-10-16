@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Country;
+use Yajra\DataTables\Facades\DataTables;
 
 class CountryController extends Controller
 {
@@ -20,6 +21,17 @@ class CountryController extends Controller
     public function index()
     {
         $country=Country::get();
+        if (\request()->ajax()){
+            return DataTables::of($country)
+                ->addcolumn('action',function($row){
+//                    return "action";
+                    return
+                    '<a href=" '.route('countries.edit',$row->id).'" class="btn btn-primary"> <i class="fa fa-pencil"></i></a>
+                     <a href=" '.route('countries.destroy',$row->id).'" class="btn btn-danger"> <i class="fa fa-trash-o"></i></a>
+                    ';
+                })
+                ->make(true);
+        }
         return view('admin.countries.index',compact('country'));
     }
 

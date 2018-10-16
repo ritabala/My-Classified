@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\SubCategory;
 use App\Category;
+use Yajra\DataTables\Facades\DataTables;
 
 class SubcategoryController extends Controller
 {
@@ -21,6 +22,20 @@ class SubcategoryController extends Controller
     public function index()
     {
         $subcategory=SubCategory::get();
+        if (\request()->ajax()){
+            return DataTables::of($subcategory)
+                ->addcolumn('action',function($data){
+//                    return "action";
+                    return
+                    '<a href=" '.route('subcategories.edit',$data->id).'" class="btn btn-primary"> <i class="fa fa-pencil"></i></a>
+                     <a href=" '.route('subcategories.destroy',$data->id).'" class="btn btn-danger"> <i class="fa fa-trash-o"></i></a>
+                    ';
+                })
+                ->editcolumn('category_id',function($data){
+                    return $data->category->cat_name;
+                })
+                ->make(true);
+        }
         return view('admin.sub_categories.index',compact('subcategory'));
     }
 

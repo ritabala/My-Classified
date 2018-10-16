@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Yajra\DataTables\Facades\DataTables;
+
 class CategoryController extends Controller
 {
 
@@ -21,6 +23,19 @@ class CategoryController extends Controller
     {
         $category=Category::get();
 //        dd($category);
+        if (\request()->ajax()){
+            return DataTables::of($category)
+
+                ->addColumn('action', function($row){
+                   return
+                    '<a href=" '.route('categories.edit',$row->id).'" class="btn btn-primary"> <i class="fa fa-pencil"></i></a>
+                     <a href=" '.route('categories.destroy',$row->id).'" class="btn btn-danger"> <i class="fa fa-trash-o"></i></a>
+                    ';
+//                    return "action";
+
+                })
+                ->make(true);
+        }
         return view('admin.categories.index',compact('category'));
     }
 

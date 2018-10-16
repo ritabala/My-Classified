@@ -40,25 +40,25 @@
                                 <tr>
                                     <th>#</th>
                                     <th>City</th>
-                                    <th>Category </th>
+                                    <th>Country </th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($city as $row)
-                                    <tr>
-                                        <td>{{$row->id}}</td>
-                                        <td>{{$row->name}}</td>
-                                        <td>{{$row->country->name}}</td>
+                                {{--@foreach($city as $row)--}}
+                                    {{--<tr>--}}
+                                        {{--<td>{{$row->id}}</td>--}}
+                                        {{--<td>{{$row->name}}</td>--}}
+                                        {{--<td>{{$row->country->name}}</td>--}}
 
-                                        <td>
-                                            <div>
-                                                <a href="{{route('cities.edit',$row->id)}}" class="btn btn-primary fa fa-pencil"></a>
-                                                <button type="button" class=" delete btn btn-danger fa fa-trash-o" data-url="{{route('cities.destroy',$row->id )}}"  data-token="{{ csrf_token()}}" data-val="{{ $row->name }}" ></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                        {{--<td>--}}
+                                            {{--<div>--}}
+                                                {{--<a href="{{route('cities.edit',$row->id)}}" class="btn btn-primary fa fa-pencil"></a>--}}
+                                                {{--<button type="button" class=" delete btn btn-danger fa fa-trash-o" data-url="{{route('cities.destroy',$row->id )}}"  data-token="{{ csrf_token()}}" data-val="{{ $row->name }}" ></button>--}}
+                                            {{--</div>--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                {{--@endforeach--}}
                                 </tbody>
                             </table>
                         </div>
@@ -75,3 +75,27 @@
 
 
 @endsection
+@push('footer-js')
+    <script>
+        $(document).ready(function(){
+            $('#example1').DataTable(
+                {
+                    processing: true,
+                    serverSide: true,
+                    autoWidth: true,
+                    responsive:true,
+
+                    ajax:
+                        {
+                            url:"{{route('cities.index')}}"
+                        },
+                    columns:[
+                        {data:'id',name:'id'},
+                        {data:'name',name:'name'},
+                        {data:'country_id',name:'country_id'},
+                        {data:'action',name:'action'},
+                        ],
+                });
+        });
+    </script>
+@endpush

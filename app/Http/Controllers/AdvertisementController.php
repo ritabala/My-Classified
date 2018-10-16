@@ -28,9 +28,16 @@ class AdvertisementController extends Controller
         $adv=Advertisement::get();
 //
         if(\request()->ajax()){
+
             return DataTables::of($adv)
                 ->addColumn('action', function($row){
-                    return "action";
+                  return
+                  ' <a href=" '.route('images.edit',$row->id).'" class="btn btn-dark"> <i class="fa fa-file-image-o"></i></a>
+                    <a href=" '.route('advertisements.edit',$row->id).'" class="btn btn-primary"> <i class="fa fa-pencil"></i></a>
+                    <button type="button" class=" btn btn-danger delete-model btn-delete" data-url="'.route('advertisements.destroy',$row->id ).'"}}" >
+                      <i class="fa fa-trash-o"></i>
+                    </button>
+                   ';
                 })
                 ->addcolumn('category', function($row){
                     return $row->subcategory->category->cat_name;
@@ -174,7 +181,12 @@ class AdvertisementController extends Controller
      */
     public function destroy($id)
     {
-        Advertisement::destroy($id);
+//        Advertisement::destroy($id);
+//        dd($id);
+//        return response(['status'=>'success','url'=>route('advertisements.index')]);
+
+        $adv = Advertisement::findOrFail($id);
+        $adv->delete();
         return response(['status'=>'success','url'=>route('advertisements.index')]);
     }
 }

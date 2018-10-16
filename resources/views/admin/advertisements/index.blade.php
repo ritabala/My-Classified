@@ -106,32 +106,20 @@
                 ajax:
                     {
                      url:"   {{ route('advertisements.index') }}"
-                     // method:"Post"
                     },
 
                 columns: [
-                    // {data: 'id'},
-                    // {data: 'title'},
-                    // {data: 'desc'},
-                    // {data: 'city_id'},
-                    // {data: 'price'},
-                    // {data: 'user_id'},
-                    // {data: 'subcategory_id'},
-                    // {data: 'category_id'},
-                    // {data: 'action'},
-
-
                     {data: 'id', name: 'id'},
                     {data: 'title', name: 'title'},
                     {data: 'desc', name: 'desc'},
                     {data: 'city_id', name: 'city_id'},
                     {data: 'price', name: 'price'},
-                    {data: 'user_id', name: 'user_id'}
-                    // {data: 'subcategory_id', name: 'subcategory_id'},
-                    // {data: 'action', name: 'action'},
-                    // {data: 'category', name: 'category'}
+                    {data: 'category', name: 'category'},
+                    {data: 'subcategory_id', name: 'subcategory_id'},
+                    {data: 'user_id', name: 'user_id'},
+                    {data: 'action', name: 'action'},
+                        ],
 
-                        ]
             });
         });
     </script>
