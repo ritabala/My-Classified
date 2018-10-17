@@ -49,22 +49,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {{--@foreach($category as $row)--}}
-                                {{--<tr>--}}
-                                    {{--<td>{{$row->id}}</td>--}}
-                                    {{--<td>{{$row->cat_name}}</td>--}}
-                                    {{--<td>--}}
-                                        {{--<div>--}}
-                                           {{--<a href="{{route('categories.edit',$row->id)}}" class="btn btn-primary fa fa-pencil"></a>--}}
-
-                                            {{--<button type="button" class=" delete btn btn-danger fa fa-trash-o" data-url="{{route('categories.destroy',$row->id )}}"  data-token="{{ csrf_token()}}" data-val="{{ $row->cat_name }}" ></button>--}}
-                                           {{--<button class=" btn btn-danger fa fa-trash-o"  id='delete' data-id="{{ $row->id }}" data-token="{{ csrf_token() }}></button>--}}
-                                            {{--<input type="submit" onsubmit="{{route('Categories.destroy',$row->id)}}" class="btn btn-danger  fa fa-trash-o" id="delete" data-id="{{ $row->id }}" data-token="{{ csrf_token() }}" data-confirm="Are you sure?" ></input>--}}
-
-                                        {{--</div>--}}
-                                    {{--</td>--}}
-                                {{--</tr>--}}
-                                {{--@endforeach--}}
                                 </tbody>
                             </table>
                         </div>

@@ -27,7 +27,9 @@ class CountryController extends Controller
 //                    return "action";
                     return
                     '<a href=" '.route('countries.edit',$row->id).'" class="btn btn-primary"> <i class="fa fa-pencil"></i></a>
-                     <a href=" '.route('countries.destroy',$row->id).'" class="btn btn-danger"> <i class="fa fa-trash-o"></i></a>
+                    <button type="button" class=" btn btn-danger delete" data-val="'.$row->title.'"  data-token="'.csrf_token().'" data-url="'.route('categories.destroy',$row->id ).'" >
+                      <i class="fa fa-trash-o"></i>
+                    </button>
                     ';
                 })
                 ->make(true);

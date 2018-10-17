@@ -45,20 +45,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {{--@foreach($subcategory as $subcat)--}}
-                                    {{--<tr>--}}
-                                        {{--<td>{{$subcat->id}}</td>--}}
-                                        {{--<td>{{$subcat->sub_category_name}}</td>--}}
-                                        {{--<td>{{$subcat->category->category_name}}</td>--}}
-
-                                        {{--<td>--}}
-                                            {{--<div>--}}
-                                                {{--<a href="{{route('subcategories.edit',$subcat->id)}}" class="btn btn-primary fa fa-pencil"></a>--}}
-                                                {{--<button type="button" class=" delete btn btn-danger fa fa-trash-o" data-url="{{route('subcategories.destroy',$subcat->id )}}"  data-token="{{ csrf_token()}}" data-val="{{ $subcat->subcat_name }}" ></button>--}}
-                                            {{--</div>--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                {{--@endforeach--}}
                                 </tbody>
                             </table>
                         </div>

@@ -34,7 +34,7 @@ class AdvertisementController extends Controller
                   return
                   ' <a href=" '.route('images.edit',$row->id).'" class="btn btn-dark"> <i class="fa fa-file-image-o"></i></a>
                     <a href=" '.route('advertisements.edit',$row->id).'" class="btn btn-primary"> <i class="fa fa-pencil"></i></a>
-                    <button type="button" class=" btn btn-danger delete" data-val="$row->title"  data-token="csrf_token()" data-url="'.route('advertisements.destroy',$row->id ).'"}}" >
+                    <button type="button" class=" btn btn-danger delete" data-val="'.$row->title.'"  data-token="'.csrf_token().'" data-url="'.route('advertisements.destroy',$row->id ).'" >
                       <i class="fa fa-trash-o"></i>
                     </button>
                    ';

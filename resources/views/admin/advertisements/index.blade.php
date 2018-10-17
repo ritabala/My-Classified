@@ -25,8 +25,7 @@
                             <li class="breadcrumb-item active">Advertisement</li>
                         </ol>
                     </div>
-                    <div class="col-sm
- ">
+                    <div class="col-sm ">
                         <ol class="breadcrumb float-sm-right">
                             <li><a href="{{route('advertisements.create')}}" class="btn btn-dark btn-sm"><i class="fa fa-plus-circle "></i> Create New</a></li>
                         </ol>
@@ -56,25 +55,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {{--@foreach($adv as $row)--}}
-                                    {{--<tr>--}}
-                                        {{--<td>{{$row->id}}</td>--}}
-                                        {{--<td>{{$row->title}}</td>--}}
-                                        {{--<td>{{$row->desc}}</td>--}}
-                                        {{--<td>{{$row->City->name}}</td>--}}
-                                        {{--<td>{{$row->price}}</td>--}}
-                                        {{--<td>{{$row->subcategory->category->cat_name}}</td>--}}
-                                        {{--<td>{{$row->subcategory->sub_category_name}}</td>--}}
-                                        {{--<td>{{$row->user->name}}</td>--}}
-                                        {{--<td>--}}
-                                            {{--<div>--}}
-                                                {{--<a href="{{route('images.edit',$row->id)}}" class="btn btn-dark fa fa-file-image-o"></a>--}}
-                                                {{--<a href="{{route('advertisements.edit',$row->id)}}" class="btn btn-primary fa fa-pencil"></a>--}}
-                                                {{--<button type="button" class=" delete btn btn-danger fa fa-trash-o" data-url="{{route('advertisements.destroy',$row->id )}}"  data-token="{{ csrf_token()}}" data-val="{{ $row->title }}" ></button>--}}
-                                            {{--</div>--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                {{--@endforeach--}}
                                 </tbody>
                             </table>
                         </div>
@@ -101,7 +81,6 @@
                 serverSide: true,
                 autoWidth: false,
                 responsive: true,
-
 
                 ajax:
                     {

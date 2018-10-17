@@ -30,7 +30,9 @@ class CityController extends Controller
 //                    return "action";
                     return
                     '<a href=" '.route('cities.edit',$row->id).'" class="btn btn-primary"> <i class="fa fa-pencil"></i></a>
-                     <a href=" '.route('cities.destroy',$row->id).'" class="btn btn-danger"> <i class="fa fa-trash-o"></i></a>
+                    <button type="button" class=" btn btn-danger delete" data-val="'.$row->title.'"  data-token="'.csrf_token().'" data-url="'.route('cities.destroy',$row->id ).'" >
+                      <i class="fa fa-trash-o"></i>
+                    </button>
                     ';
                 })
                 ->editcolumn('country_id',function($row){

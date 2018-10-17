@@ -28,7 +28,9 @@ class SubcategoryController extends Controller
 //                    return "action";
                     return
                     '<a href=" '.route('subcategories.edit',$data->id).'" class="btn btn-primary"> <i class="fa fa-pencil"></i></a>
-                     <a href=" '.route('subcategories.destroy',$data->id).'" class="btn btn-danger"> <i class="fa fa-trash-o"></i></a>
+                    <button type="button" class=" btn btn-danger delete" data-val="'.$data->title.'"  data-token="'.csrf_token().'" data-url="'.route('subcategories.destroy',$data->id ).'" >
+                      <i class="fa fa-trash-o"></i>
+                    </button>
                     ';
                 })
                 ->editcolumn('category_id',function($data){

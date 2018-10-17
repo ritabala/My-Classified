@@ -49,18 +49,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {{--@foreach($country as $row)--}}
-                                    {{--<tr>--}}
-                                        {{--<td>{{$row->id}}</td>--}}
-                                        {{--<td>{{$row->name}}</td>--}}
-                                        {{--<td>--}}
-                                            {{--<div>--}}
-                                                {{--<a href="{{route('countries.edit',$row->id)}}" class="btn btn-primary fa fa-pencil"></a>--}}
-                                                {{--<button type="button" class=" delete btn btn-danger fa fa-trash-o" data-url="{{route('countries.destroy',$row->id )}}"  data-token="{{ csrf_token()}}" data-val="{{ $row->name }}" ></button>--}}
-                                           {{--</div>--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                {{--@endforeach--}}
                                 </tbody>
                             </table>
                         </div>
