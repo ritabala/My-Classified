@@ -116,7 +116,7 @@ class CityController extends Controller
         City::where ('id',$id)->update([
             'name'=>\request('name')
         ]);
-        return redirect(route('cities.index'));
+        return redirect(route('cities.index'))->with('success','City updated successfully');
 
     }
 
@@ -129,7 +129,15 @@ class CityController extends Controller
     public function destroy($id)
     {
         City::destroy($id);
+//        echo('in destroy');
+//        $data =json(['status'=>'success','url'=>route('cities.index')]);
+//        dd($data);
+
+//        (json(['status'=>'success','url'=>route('cities.index')]));
+
         return response()->json(['status'=>'success','url'=>route('cities.index')]);
+//        return response()->json(['status'=>'success','url'=>(route('cities.index')->with('success','City deleted successfully'))]);
+//        return response()->json(['url'=>(route('cities.index')->with('success','City deleted successfully'))]);
 
     }
 }

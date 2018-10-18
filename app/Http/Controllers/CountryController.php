@@ -118,7 +118,7 @@ class CountryController extends Controller
         ]);
 
 
-        return redirect(route('countries.index'));
+        return redirect(route('countries.index'))->with('success','Country updated successfully');;
 
     }
 

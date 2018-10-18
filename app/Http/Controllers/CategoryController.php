@@ -124,7 +124,7 @@ class CategoryController extends Controller
        Category::where ('id',$id)->update([
            'cat_name'=>\request('cat_name')
        ]);
-       return redirect(route('categories.index'));
+       return redirect(route('categories.index'))->with('success','Category updated successfully');;
     }
 
     /**

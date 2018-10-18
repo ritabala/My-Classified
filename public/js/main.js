@@ -18,10 +18,10 @@ $(document).ready(function(){
                 success: function (data) {
                     if (data.status === 'success') {
                         window.location = data.url;
+                        // $success='Record deleted successfully';
                     }
                 },
                 error: function (data) {
-                    // console.log($row->id);
                     console.log('Error:', data);
                 }
             })

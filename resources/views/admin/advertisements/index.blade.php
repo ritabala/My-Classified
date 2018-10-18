@@ -10,14 +10,6 @@
                 <div class="row mb-2">
                     <div class="col-sm-8">
                         <h1 class="m-0 text-black"><i class="fa fa-buysellads"></i>&nbsp; Advertisements</h1>
-                        @if ($message=Session::get('error'))
-                            {{--<div class="alert alert-danger align-content-center">--}}
-                            <div class="align-content-left alert-danger" >{{$message}}</div>
-                            {{--</div>--}}
-                        @endif
-                        @if ($message=Session::get('success'))
-                            <div class="align-content-left alert-success" >{{$message}}</div>
-                        @endif
                     </div>
                     <div class="col-sm-2">
                         <ol class="breadcrumb float-sm-right">
@@ -40,6 +32,13 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                            @if ($message=Session::get('error'))
+                                <div class="align-content-left  alert alert-danger" >{{$message}}</div>
+                                ]
+                            @endif
+                            @if ($message=Session::get('success'))
+                                <div class="align-content-left alert alert-success" >{{$message}}</div>
+                            @endif
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>

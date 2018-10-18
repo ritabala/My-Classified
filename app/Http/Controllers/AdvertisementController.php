@@ -34,8 +34,7 @@ class AdvertisementController extends Controller
                   return
                   ' <a href=" '.route('images.edit',$row->id).'" class="btn btn-dark"> <i class="fa fa-file-image-o"></i></a>
                     <a href=" '.route('advertisements.edit',$row->id).'" class="btn btn-primary"> <i class="fa fa-pencil"></i></a>
-                    <button type="button" class=" btn btn-danger delete" data-val="'.$row->title.'"  data-token="'.csrf_token().'" data-url="'.route('advertisements.destroy',$row->id ).'" >
-                      <i class="fa fa-trash-o"></i>
+                    <button type="button" class=" btn btn-danger delete" data-val="'.$row->title.'"  data-token="'.csrf_token().'" data-url="'.route('advertisements.destroy',$row->id ).'" >                    <i class="fa fa-trash-o"></i>
                     </button>
                    ';
                 })
@@ -104,7 +103,7 @@ class AdvertisementController extends Controller
 
         Advertisement::create($request->all());
 
-        return redirect(route('advertisements.index'));
+        return redirect(route('advertisements.index'))->with('success','Advertisement created successfully');
     }
 
     /**
@@ -130,7 +129,7 @@ class AdvertisementController extends Controller
         $city=City::get();
         $subcategory=SubCategory::get();
         $user=User::get();
-        return view('admin.advertisements.edit',compact('adv','city','subcategory','user')) ;
+        return view('admin.advertisements.edit',compact('adv','city','subcategory','user'));
     }
 
     /**
@@ -170,7 +169,7 @@ class AdvertisementController extends Controller
 //            $request->all()
 //        ]);
 
-        return redirect(route('advertisements.index'));
+        return redirect(route('advertisements.index'))->with('success','Advertisement updated successfully');
     }
 
     /**
@@ -182,11 +181,6 @@ class AdvertisementController extends Controller
     public function destroy($id)
     {
         Advertisement::destroy($id);
-//        dd($id);
-        return response(['status'=>'success','url'=>route('advertisements.index')]);
-//
-//        $adv = Advertisement::findOrFail($id);
-//        $adv->delete();
-//        return response(['status'=>'success','url'=>route('advertisements.index')]);
+        return response(['status'=>'success','success_message'=>'Advertisement deleted successfully','url'=>route('advertisements.index')]);
     }
 }

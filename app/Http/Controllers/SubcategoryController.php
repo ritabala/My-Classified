@@ -119,7 +119,7 @@ class SubcategoryController extends Controller
             'sub_category_name'=>\request('sub_category_name')
         ]);
 
-        return redirect(route('subcategories.index'));
+        return redirect(route('subcategories.index'))->with('success','Subcategory updated successfully');;
 
     }
 
